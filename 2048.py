@@ -41,8 +41,8 @@ class environment:
     Merging:
     want to combine elements in a row/col with adjacent or non-adjacent elements in the same row/col with the same value
     as long as only zeros are between them.
-    
-    
+
+
     """
 
     def move_left(self, col):
