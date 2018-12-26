@@ -88,35 +88,32 @@ class environment:
 
 def main():
     env = environment()
-    key = 'asdf'
-    score = 0
-    print(env)
-    while key != 'q':
-        key = input("Direction: ")
-        if key == 'w':
-            action = 1
-        if key == 'd':
-            action = 2
-        if key == 's':
-            action = 3
-        if key == 'a':
-            action = 0
-        board, reward, done = env.step(action)
-        if(done):
-            print("You lose")
+    mode = "User"
+    if mode == "User":
+        key = []
+        score = 0
+        print(env)
+        while key != 'q':
+            key = input("Direction: ")
+            if key == 'w':
+                action = 1
+            if key == 'd':
+                action = 2
+            if key == 's':
+                action = 3
+            if key == 'a':
+                action = 0
+            board, reward, done = env.step(action)
+            if(done):
+                print("You lose")
+                print(score)
+                break
+            score+=reward
+            print(board)
             print(score)
-            break
-        score+=reward
-        print(board)
-        print(score)
-    # env.board = np.array([[2, 2, 4, 8],
-    #                      [2, 0, 2, 4],
-    #                      [2, 2, 0, 2],
-    #                      [2, 2, 2, 0]], dtype=np.uint)
-    # print(env)
-    # ret = env.step(1)
-    # print(env)
-    # print(ret)
+    elif mode == "Learning":
+        # Implement code to learn how to play the game here
+        print("Learning...")
 
 
 
