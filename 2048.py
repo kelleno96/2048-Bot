@@ -1,5 +1,5 @@
 import numpy as np
-
+import tensorflow as tf
 
 class environment:
     def __init__(self):
@@ -76,7 +76,7 @@ class environment:
             while(self.board[row, col] != 0):
                 row = np.random.randint(0, 4)
                 col = np.random.randint(0, 4)
-            self.board[row, col] = 2 + 2*np.random.randint(0,1)
+            self.board[row, col] = 2 + 2*np.random.randint(0,2)
 
     def print_board(self):
         print(self.board)
